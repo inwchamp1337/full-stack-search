@@ -1,6 +1,10 @@
 # Fullstack Review Application
 
 This project is a fullstack application for managing and searching product reviews. It consists of a Rust-based backend (using Axum and SPFRESH for search) and a Leptos-based frontend. The backend handles review storage and search, while the frontend provides a user interface.
+#demo
+
+https://github.com/user-attachments/assets/7253b84a-c91d-4189-9b24-c72b6cdd7c83
+
 
 ## Prerequisites
 
