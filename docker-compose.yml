@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.api
+    container_name: rust-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data:/app/data   # backend เก็บไฟล์ index/metadata ลง host
+
+  frontend:
+    build: ./frontend
+    container_name: leptos-frontend
+    ports:
+      # nginx inside the image now listens on port 3000, map host 3000 -> container 3000
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      # When running in Docker Compose, use the service name 'backend' so
+      # the frontend container can resolve and reach the backend.
+      - BACKEND_URL=http://backend
+      - BACKEND_PORT=8000
+    depends_on:
+      - backend
+    restart: unless-stopped

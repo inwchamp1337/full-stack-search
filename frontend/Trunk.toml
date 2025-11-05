@@ -1,0 +1,15 @@
+[build]
+target = "index.html"
+dist = "dist"
+
+[watch]
+ignore = ["dist"]
+
+[serve]
+port = 3000
+open = true
+
+[[proxy]]
+backend = "http://localhost:8000/api"
+rewrite = "/api"
+ws = false

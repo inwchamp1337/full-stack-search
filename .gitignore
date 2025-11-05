@@ -1,0 +1,62 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Rust build artifacts
+/target/
+**/target/
+Cargo.lock
+
+# Backend specific
+/backend/target/
+/backend/target/**
+
+# Frontend (Trunk / wasm / static builds)
+/frontend/dist/
+/frontend/target/
+/frontend/wasm-bindgen/
+/frontend/pkg/
+/frontend/.cargo/
+
+# Python
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files (may contain secrets)
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+
+# Data files (do not commit large datasets or generated indices)
+/backend/data/
+
+# Certificates, keys, secrets
+*.pem
+*.key
+secrets/
+
+# Misc
+*.swp
+*.swo
+*.bak
